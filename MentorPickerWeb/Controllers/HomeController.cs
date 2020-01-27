@@ -10,9 +10,12 @@ namespace MentorPickerWeb.Controllers
 {
     public class HomeController : Controller
     {
+        private List<Mentor> mentors=new List<Mentor>();
         public IActionResult Index()
         {
-            return View();
+            mentors=new List<Mentor>(){new Mentor(){Name="Ali"},
+            new Mentor(){Name="Veli"}};
+            return View(mentors);
         }
 
         public IActionResult About()
