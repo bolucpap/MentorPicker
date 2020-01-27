@@ -5,7 +5,24 @@
 }
 
 <div>
-    Mentors!
-    @foreach (var mentor in Model)
-    {<li>@mentor.Name</li>}
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Mentor</th>
+                <th>Mentee(ler)</th>
+            </tr>
+        </thead>
+        @foreach (var mentor in Model)
+        {
+        <tr>
+            <td>@mentor.Name</td>
+            <td>
+                @foreach (var mentee in mentor.Mentees)
+                {
+                    <li>@mentee.Name</li>
+                }
+                </td>
+</tr>}
+        </table>
+    <div>Kura çekiliş zamanı:@DateTime.Now</div>
 </div>
